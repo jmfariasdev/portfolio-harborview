@@ -71,6 +71,7 @@
       $valid: true;
     }
   }
+
   @if not $valid {
     @error('Invalid position type.');
   }
@@ -83,6 +84,7 @@
       $valid: true;
     }
   }
+
   @if not $valid {
     @error('Invalid position reference.');
   }
@@ -90,18 +92,28 @@
   // Returned Styles
   position: $type;
 
+  @if $reference == inset {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
   @if $reference == tl {
     top: px_to_rem($coord1);
     left: px_to_rem($coord2);
   }
+
   @if $reference == tr {
     top: px_to_rem($coord1);
     right: px_to_rem($coord2);
   }
+
   @if $reference == bl {
     bottom: px_to_rem($coord1);
     left: px_to_rem($coord2);
   }
+
   @if $reference == br {
     bottom: px_to_rem($coord1);
     right: px_to_rem($coord2);

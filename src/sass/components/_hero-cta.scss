@@ -11,7 +11,7 @@
   border-radius: px_to_rem(9.28);
   color: $neutral_50;
   text-shadow: 0 4px 20px rgba($black, .6);
-  transition: $generic;
+  transition: $btn_interaction;
 
   // Interaction
   &:active {

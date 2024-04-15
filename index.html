@@ -21,12 +21,12 @@
     <header class='navbar'>
       <nav class='navbar__content u-center'>
         <!-- logo -->
-        <a href='#' id='logo' class='u-focusable' tabindex="0">
+        <a href='#' id='logo' class='u-focusable' tabindex='0'>
           <img
             src='/assets/logo/expanded.svg' class='u-unselectable' alt='Harborview Logo' />
         </a>
         <!-- mobile menu button -->
-        <button id='mb-menu-btn' tabindex="0">
+        <button id='mb-menu-btn' tabindex='0'>
           <img src='/assets/icons/menu.svg' id='mb-menu-icon' alt='Menu Icon'>
         </button>
       </nav>
@@ -50,6 +50,38 @@
           </a>
         </div>
       </div>
+
+      <!-- [ Mobile Menu ] -->
+      <div class='mb-menu' role='menu'>
+        <!-- close button -->
+        <button class='mb-menu__close-btn'>
+          <img src='/assets/icons/close-white.svg' id='close-btn-icon' alt='Close Button Icon'>
+        </button>
+        <!-- nav links -->
+        <nav>
+          <ul class='mb-menu__links'>
+            <li>
+              <a href='#'><span class='u-unselectable'>Services</span></a>
+            </li>
+            <li>
+              <a href='#'><span class='u-unselectable'>Programs</span></a>
+            </li>
+            <li>
+              <a href='#'><span class='u-unselectable'>Reviews</span></a>
+            </li>
+            <li>
+              <a href='#'><span class='u-unselectable'>Gallery</span></a>
+            </li>
+            <li>
+              <a href='#'><span id='authLink' class='u-unselectable'>Sign In</span></a>
+            </li>
+            <li>
+              <a href='#'><span id='authLink' class='u-unselectable'>Sign Up</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
       <div id='divider'></div>
     </section>
     
