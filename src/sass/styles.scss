@@ -1,0 +1,24 @@
+/*
+  - All partial styles are loaded here.
+*/
+
+// [ Core ]
+@use 'core/reset';
+
+// [ Animations ]
+@use 'animations';
+
+// [ Layout ]
+@use 'layout/hero-section';
+
+// [ Utils ]
+@use 'utils/utility-classes';
+
+// [ Components ]
+@use 'components/hero-cta';
+@use 'components/mb-menu';
+@use 'components/mb-nav-widget';
+
+// [ Typography ]
+@use 'typography/global';
+@use 'typography/mb-hero-headings';

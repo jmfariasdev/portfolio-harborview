@@ -1,0 +1,37 @@
+hmtl {
+  font-size: 100%;
+  box-sizing: border-box;
+  min-width: 280px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 2000px; // TODO: Remove this later.
+}
+
+// Handle accessibility styles myself
+*:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
