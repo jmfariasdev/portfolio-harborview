@@ -4,7 +4,7 @@
   - Converts provided value to rem unit.
   [$value] -> is assumed to be pixels.
   [$flag] -> is used to signal that the result must be negative,
-  typically useful  when the $value is not a direct value,
+  typically useful when the $value is not a direct value,
   like a variable, otherwise passing a value like (-20) will
   also return a negative result.
 */
