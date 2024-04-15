@@ -1,0 +1,28 @@
+@use '../abstract/colors' as *;
+@use '../utils/helpers' as *;
+
+.hero {
+  min-height: 100vh;
+
+  &__background-img {
+    height: 83vh;
+    background: 
+      linear-gradient(to bottom, rgba($black, .9), transparent 75%),
+      linear-gradient(to top, rgba($black, .7), transparent 50%),
+      url('/assets/images/opt/hero-sm.jpg') no-repeat 50% 0%/cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  #divider {
+    height: px_to_rem(10);
+    background: $g_main_h;
+    box-shadow: 0 4px 20px rgba($black, .3);
+  }
+}

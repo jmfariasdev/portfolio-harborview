@@ -1,0 +1,49 @@
+@use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+@use '../abstract/variables' as *;
+
+#hero-cta {
+  @include applyFont('Raleway', 500, 37);
+  padding-inline: px_to_rem(88.15);
+  padding-top: px_to_rem(9.28);
+  padding-bottom: px_to_rem(15.7);
+  margin-top: px_to_rem(54);
+  border-radius: px_to_rem(9.28);
+  color: $neutral_50;
+  text-shadow: 0 4px 20px rgba($black, .6);
+  transition: $generic;
+
+  // Interaction
+  &:active {
+    transform: scale(.97);
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+// Set hover styles to be the default on mobile devices.
+@include max-w(1023px) {
+  #hero-cta {
+    box-shadow: 0 4px 20px 4px rgba($black, .8);
+    background: $fresh_green;
+    text-shadow: none;
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+// Adjustments for smaller heights
+
+@include max-h(690px) {
+  #hero-cta {
+    margin-top: px_to_rem(30);
+  }
+}
+
+@include max-h(600px) {
+  #hero-cta {
+    margin-top: px_to_rem(15);
+  }
+}
+
+/*---------------------------------------------------------------------------*/

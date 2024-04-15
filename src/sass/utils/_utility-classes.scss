@@ -1,0 +1,20 @@
+@use '../abstract/colors' as *;
+@use '../utils/helpers' as *;
+
+.u-center {
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.u-unselectable {
+  user-select: none;
+  pointer-events: none;
+}
+
+.u-focusable {
+  &:focus-visible {
+    outline: 2px solid $fresh_green;
+    outline-offset: px_to_rem(8);
+    border-radius: px_to_rem(10);
+  }
+}

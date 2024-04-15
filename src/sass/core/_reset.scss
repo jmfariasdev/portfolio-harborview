@@ -27,6 +27,12 @@ img {
   width: 100%;
 }
 
+button, a {
+  border: none;
+  background: transparent;
+  display: inline-block;
+}
+
 a {
   text-decoration: none;
 }
@@ -34,4 +40,3 @@ a {
 ul {
   list-style: none;
 }
-

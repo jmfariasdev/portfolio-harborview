@@ -1,0 +1,49 @@
+@use '../abstract/colors' as *;
+@use '../abstract/variables' as *;
+@use '../utils/helpers' as *;
+
+.navbar {
+  @include applyPosition;
+  width: 100%;
+  height: px_to_rem(75);
+  background: rgba($black, .3);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 20px rgba($black, .25);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding-inline: px_to_rem(24);
+
+    #logo {
+      max-width: px_to_rem(180);
+      transition: $generic;
+    }
+
+    #mb-menu-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: px_to_rem(14);
+      border-radius: 50%;
+      transition: $generic;
+      margin-right: px_to_rem(-16);
+      cursor: pointer;
+
+      &:active {
+        background: rgba($neutral_700, .2);
+      }
+
+      &:focus-visible {
+        outline: 2px solid $fresh_green;
+      }
+      
+      #mb-menu-icon {
+        width: px_to_rem(36);
+        height: px_to_rem(36);
+      }
+    }
+  }
+}

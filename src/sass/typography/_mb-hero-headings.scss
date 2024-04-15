@@ -1,0 +1,74 @@
+@use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+
+.hero {
+  &__content {
+
+    #mb-headings {
+      @include applyFont('Kumbh Sans', 600);
+      width: px_to_rem(340);
+      letter-spacing: -1.6px;
+      color: $neutral_50;
+      margin-top: px_to_rem(100);
+
+      #h-1,
+      #h-2,
+      #h-3,
+      #h-4 {
+        width: fit-content;
+        text-shadow: 0 4px 20px rgba($black, .6);
+      }
+
+      #h-1,
+      #h-4 {
+        font-size: px_to_rem(52);
+      }
+
+      #h-1 {
+        margin-bottom: px_to_rem(6);
+      }
+
+      #h-2 {
+        font-size: px_to_rem(36);
+        margin-left: auto;
+        margin-bottom: px_to_rem(57);
+      }
+
+      #h-3 {
+        font-size: px_to_rem(28);
+        margin-left: px_to_rem(40);
+        margin-bottom: px_to_rem(5);
+      }
+
+      #h-4 {
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+// Adjustments for smaller heights
+
+@include max-h(690px) {
+  .hero {
+    &__content {
+      #mb-headings {
+        margin-top: px_to_rem(90);
+      }
+    }
+  }
+}
+
+@include max-h(600px) {
+  .hero {
+    &__content {
+      #mb-headings {
+        margin-top: px_to_rem(80);
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/

@@ -12,15 +12,47 @@
     <!-- Favicon -->
     <link rel='icon' type='image/png' href='/assets/favicon-32x32.png' />
     <!-- Styles -->
-    <link rel="stylesheet" href="src/sass/styles.scss">
+    <link rel='stylesheet' href='src/sass/styles.scss'>
   </head>
 
   <body>
+    
+    <!-- [ Navbar ] -->
+    <header class='navbar'>
+      <nav class='navbar__content u-center'>
+        <!-- logo -->
+        <a href='#' id='logo' class='u-focusable' tabindex="0">
+          <img
+            src='/assets/logo/expanded.svg' class='u-unselectable' alt='Harborview Logo' />
+        </a>
+        <!-- mobile menu button -->
+        <button id='mb-menu-btn' tabindex="0">
+          <img src='/assets/icons/menu.svg' id='mb-menu-icon' alt='Menu Icon'>
+        </button>
+      </nav>
+    </header>
 
-    <h1 style='font-family: Kumbh Sans; font-size: 4rem; text-align: center;'>
-      Great to start my first portfolio project!
-    </h1>
+    <!-- [ Hero Section ] -->
+    <section class='hero'>
+      <div class='hero__background-img'>
+        <div class='hero__content u-center'>
+          <!-- mobile headings -->
+          <div id='mb-headings'>
+            <h1 id='h-1'>The Bridge</h1>
+            <h1 id='h-2'>Between You and</h1>
+            <h1 id='h-3'>Unique Experiences</h1>
+            <h1 id='h-4'>in Nature</h1>
+          </div>
 
+          <!-- hero cta -->
+          <a href='#' id='hero-cta' class='u-focusable' role='button'>
+            <span class='u-unselectable'>Explore</span>
+          </a>
+        </div>
+      </div>
+      <div id='divider'></div>
+    </section>
+    
     <!-- Typescript -->
     <script type='module' src='/src/main.ts'></script>
   </body>
