@@ -1,7 +1,16 @@
 /*---------------------------------------------------------------------------*/
 
+// [ Timing Functions ]
+
+$relaxed: cubic-bezier(.04,.61,.35,.97);
+$mb_menu: cubic-bezier(.14,.82,.62,.95);
+
+/*---------------------------------------------------------------------------*/
+
 // [ Trasitions ]
-$generic: all .2s cubic-bezier(.43,.88,.68,1.01);
-$btn_interaction: all .3s cubic-bezier(.07,.59,.43,.91);
+
+$focus: outline-offset .2s cubic-bezier(.43,.88,.68,1.01);
+$btn_interaction: transform .3s, background .3s, color .3s ease;
+$link_hover: color .3s $relaxed;
 
 /*---------------------------------------------------------------------------*/

@@ -1,0 +1,214 @@
+@use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+@use '../abstract/variables' as V;
+@use '../animations' as *;
+
+.mb-menu {
+  @include applyPosition(fixed, _, _, inset);
+  background: linear-gradient(to bottom, $black, hsl(0, 0%, 8%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // Animation related
+  transform: translateY(10%) scale(0);
+  border-radius: 50%;
+
+  &[data-state='open'] {
+    @include applyMenuOpen(.3s);
+
+    .mb-menu__close-btn {
+      @include applyCloseBtnSlideIn(.4s)
+    }
+
+    // Links Animation
+    @for $i from 0 through 5 {
+      $delay: .3s + (.08 * $i); /* initial delay + (interval between each link * $i) */
+      .mb-menu__links {
+        li[id='l-#{$i + 1}'] {
+          @include applyLinksSlideIn(.4s, $delay);
+        }
+      }
+    }
+  }
+
+  &[data-state='closed'] {
+    @include applyMenuClose;
+
+    .mb-menu__links {
+      li {
+        @include applyLinksOut;
+      }
+    }
+
+    .mb-menu__close-btn {
+      @include applyCloseBtnOut;
+    }
+  }
+
+  &__close-btn {
+    @include applyPosition(fixed, 10, 10, tr);
+    padding: px_to_rem(15);
+    border-radius: 50%;
+    cursor: pointer;
+
+    // Interaction
+    &:active {
+      background: rgba($neutral_700, .2);
+    }
+
+    &:focus-visible {
+      transition: outline .1s V.$relaxed;
+      outline: 2px solid $fresh_green;
+    }
+    
+    #close-btn-icon {
+      width: px_to_rem(48);
+      height: px_to_rem(48);
+    }
+  }
+
+  &__links {
+    @include applyFont('Raleway', 400, 36);
+    letter-spacing: 1.6px;
+    display: flex;
+    flex-direction: column;
+    row-gap: px_to_rem(30);
+
+    li {
+      text-shadow: 0 2px 20px rgba($black, .5);
+    }
+
+    a {
+      transition: V.$btn_interaction;
+      &:active {
+        transform: scale(.97);
+      }
+    }
+
+    span {
+      color: $neutral_50;
+    }
+
+    #authLink {
+      background: $g_main_h;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include max-h(680px) {
+  .mb-menu {
+    &__close-btn {
+      @include applyPosition(fixed, 12, 12, tr);
+      padding: px_to_rem(13.5);
+
+      #close-btn-icon {
+        width: px_to_rem(43.2);
+        height: px_to_rem(43.2);
+      }
+    }
+    
+    &__links {
+      font-size: px_to_rem(32.4);
+      row-gap: px_to_rem(27);
+    }
+  }
+}
+
+@include max-h(590px) {
+  .mb-menu {
+    &__close-btn {
+      padding: px_to_rem(12.15);
+
+      #close-btn-icon {
+        width: px_to_rem(38.88);
+        height: px_to_rem(38.88);
+      }
+    }
+    
+    &__links {
+      font-size: px_to_rem(29.16);
+      row-gap: px_to_rem(24.3);
+    }
+  }
+}
+
+@include max-w(280px) {
+  .mb-menu {
+    &__close-btn {
+      padding: px_to_rem(11.87);
+
+      #close-btn-icon {
+        width: px_to_rem(36.9);
+        height: px_to_rem(36.9);
+      }
+    }
+    
+    &__links {
+      font-size: px_to_rem(27.7);
+      row-gap: px_to_rem(23);
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(600px) {
+  @include min-h(720px) {
+    .mb-menu {
+      &__close-btn {
+        @include applyPosition(fixed, 15, 15, tr);
+      }
+      
+      &__links {
+        font-size: px_to_rem(39.6);
+        row-gap: px_to_rem(33);
+      }
+    }
+  }
+
+  @include min-h(940px) {
+    .mb-menu {
+      &__close-btn {
+        @include applyPosition(fixed, 20, 20, tr);
+        padding: px_to_rem(18);
+
+        #close-btn-icon {
+          width: px_to_rem(57.6);
+          height: px_to_rem(57.6);
+        }
+      }
+      
+      &__links {
+        font-size: px_to_rem(47.52);
+        row-gap: px_to_rem(39.6);
+      }
+    }
+  }
+}
+
+@include min-w(768px) {
+  @include min-h(1200px) {
+    .mb-menu {
+      &__close-btn {
+        @include applyPosition(fixed, 25, 25, tr);
+        padding: px_to_rem(21.6);
+
+        #close-btn-icon {
+          width: px_to_rem(69.12);
+          height: px_to_rem(69.12);
+        }
+      }
+      
+      &__links {
+        font-size: px_to_rem(57);
+        row-gap: px_to_rem(47.52);
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/

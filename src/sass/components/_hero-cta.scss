@@ -1,6 +1,7 @@
 @use '../utils/helpers' as *;
 @use '../abstract/colors' as *;
 @use '../abstract/variables' as *;
+@use '../animations' as *;
 
 #hero-cta {
   @include applyFont('Raleway', 500, 37);
@@ -9,6 +10,7 @@
   padding-bottom: px_to_rem(15.7);
   margin-top: px_to_rem(54);
   border-radius: px_to_rem(9.28);
+  border: 2px solid $neutral_50;
   color: $neutral_50;
   text-shadow: 0 4px 20px rgba($black, .6);
   transition: $btn_interaction;
@@ -21,28 +23,187 @@
 
 /*---------------------------------------------------------------------------*/
 
-// Set hover styles to be the default on mobile devices.
-@include max-w(1023px) {
+@include max-w(375px) {
   #hero-cta {
-    box-shadow: 0 4px 20px 4px rgba($black, .8);
-    background: $fresh_green;
-    text-shadow: none;
+    font-size: px_to_rem(33.3);
+    padding-inline: px_to_rem(79.33);
+    padding-top: px_to_rem(8.35);
+    padding-bottom: px_to_rem(14.13);
+    margin-top: px_to_rem(35);
+    border-radius: px_to_rem(8.35);
+  }
+}
+
+@include max-w(320px) {
+  #hero-cta {
+    font-size: px_to_rem(30);
+    padding-inline: px_to_rem(71.4);
+    padding-top: px_to_rem(7.51);
+    padding-bottom: px_to_rem(12.7);
+    margin-top: px_to_rem(25);
+    border-radius: px_to_rem(7.51);
+  }
+}
+
+@include max-w(280px) {
+  #hero-cta {
+    font-size: px_to_rem(28.5);
+    padding-inline: px_to_rem(67.83);
+    padding-top: px_to_rem(7.13);
+    padding-bottom: px_to_rem(12);
+    margin-top: px_to_rem(41.55);
+    border-radius: px_to_rem(7.13);
   }
 }
 
 /*---------------------------------------------------------------------------*/
 
-// Adjustments for smaller heights
+@include min-w(478px) {
+  @include min-h(720px) {
+    #hero-cta {
+      font-size: px_to_rem(40.7);
+      padding-inline: px_to_rem(96.96);
+      padding-top: px_to_rem(10.20);
+      padding-bottom: px_to_rem(17.27);
+      margin-top: px_to_rem(40);
+      border-radius: px_to_rem(10.20);
+    }
+  }
+}
 
-@include max-h(690px) {
+@include min-w(600px) {
+  @include min-h(720px) {
+    #hero-cta {
+      margin-top: px_to_rem(30); 
+    }
+  }
+
+  @include min-h(940px) {
+    #hero-cta {
+      font-size: px_to_rem(48.84);
+      padding-inline: px_to_rem(116.35);
+      padding-top: px_to_rem(12.24);
+      padding-bottom: px_to_rem(20.72);
+      margin-top: px_to_rem(45);
+      border-radius: px_to_rem(12.24);
+    }
+  }
+}
+
+@include min-w(768px) {
+  @include min-h(940px) {
+    #hero-cta {
+      font-size: px_to_rem(53.72);
+      padding-inline: px_to_rem(128);
+      padding-top: px_to_rem(13.46);
+      padding-bottom: px_to_rem(22.8);
+      border-radius: px_to_rem(13.46);
+    }
+  }
+
+  @include min-h(1200px) {
+    #hero-cta {
+      font-size: px_to_rem(64.46);
+      padding-inline: px_to_rem(153.6);
+      padding-top: px_to_rem(16.15);
+      padding-bottom: px_to_rem(27.36);
+      border-radius: px_to_rem(16.15);
+    }
+  }
+}
+
+@include min-w(900px) {
+  @include min-h(1520px) {
+    #hero-cta {
+      font-size: px_to_rem(70.9);
+      padding-inline: px_to_rem(169);
+      padding-top: px_to_rem(17.76);
+      padding-bottom: px_to_rem(30.1);
+      border-radius: px_to_rem(17.76);
+      margin-top: px_to_rem(60);
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1025px) {
   #hero-cta {
+    font-size: px_to_rem(36);
+    padding-inline: px_to_rem(85.5);
+    padding-top: px_to_rem(9);
+    padding-bottom: px_to_rem(16.2);
+    margin-top: px_to_rem(22.5);
+  }
+}
+
+@include min-w(1240px) {
+  #hero-cta {
+    margin-top: px_to_rem(25);
+  }
+}
+
+@include min-w(1400px) {
+  #hero-cta {
+    font-size: px_to_rem(43.2);
+    padding-inline: px_to_rem(102.6);
+    padding-top: px_to_rem(10.8);
+    padding-bottom: px_to_rem(18.36);
+    margin-top: px_to_rem(27);
+    border-width: 3px;
+  }
+}
+
+@include min-w(1600px) {
+  #hero-cta {
+    font-size: px_to_rem(46.8);
+    padding-inline: px_to_rem(111.6);
+    padding-top: px_to_rem(11.7);
+    padding-bottom: px_to_rem(19.89);
     margin-top: px_to_rem(30);
   }
 }
 
-@include max-h(600px) {
+@include min-w(1920px) {
   #hero-cta {
-    margin-top: px_to_rem(15);
+    font-size: px_to_rem(61.2);
+    padding-inline: px_to_rem(145.8);
+    padding-top: px_to_rem(15.3);
+    padding-bottom: px_to_rem(25.89);
+    margin-top: px_to_rem(40);
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(478px) {
+  @include max-h(640px) {
+    #hero-cta {
+      margin-top: px_to_rem(20);
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+// Set hover styles to be the default on mobile devices.
+@include max-w(1024px) {
+  #hero-cta {
+    @include applySlideUpwards(.8s);
+    box-shadow: 0 4px 20px 4px rgba($black, .8);
+    background: $fresh_green;
+    text-shadow: none;
+    border: none;
+  }
+}
+
+// Set hover state to desktop devices only.
+@media screen and (min-width: 1025px) and (hover: hover) {
+  #hero-cta:hover {
+    box-shadow: 0 4px 20px 4px rgba($black, .8);
+    background: $fresh_green;
+    text-shadow: none;
+    border-color: transparent;
   }
 }
 

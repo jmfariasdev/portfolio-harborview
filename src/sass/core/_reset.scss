@@ -1,7 +1,12 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
-  min-width: 280px;
+  min-width: 320px;
+}
+
+// Prevent scroll when mobile menu is open.
+html:has(.mb-menu[data-state='open']) {
+  overflow-y: hidden;
 }
 
 *,
@@ -17,7 +22,7 @@ body {
   min-height: 2000px; // TODO: Remove this later.
 }
 
-// Handle accessibility styles myself
+// Handle accessibility styles myself.
 *:focus {
   outline: none;
 }

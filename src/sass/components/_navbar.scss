@@ -1,6 +1,6 @@
+@use '../utils/helpers' as *;
 @use '../abstract/colors' as *;
 @use '../abstract/variables' as *;
-@use '../utils/helpers' as *;
 
 .navbar {
   @include applyPosition;
@@ -18,8 +18,7 @@
     padding-inline: px_to_rem(24);
 
     #logo {
-      max-width: px_to_rem(180);
-      transition: $generic;
+      width: px_to_rem(180);
     }
 
     #mb-menu-btn {
@@ -28,7 +27,6 @@
       align-items: center;
       padding: px_to_rem(14);
       border-radius: 50%;
-      transition: $generic;
       margin-right: px_to_rem(-16);
       cursor: pointer;
 
@@ -45,5 +43,195 @@
         height: px_to_rem(36);
       }
     }
+
+    &--desktop {
+      display: flex;
+      align-items: center;
+      column-gap: px_to_rem(30);
+      height: 100%;
+
+      #nav-links {
+        @include applyFont('Raleway', 600);
+        letter-spacing: 1.4px;
+        display: flex;
+        align-items: center;
+        column-gap: px_to_rem(30);
+        height: 100%;
+
+        li {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          cursor: pointer;
+          position: relative;
+
+          &:hover span {
+            color: $fresh_green;
+          }
+
+          &:hover::after {
+            transform: translateX(-4.35%) scaleX(1);
+          }
+
+          &:active a {
+            transform: scale(.95);
+          }
+        }
+
+        li::after {
+          @include applyPosition(absolute, 0, 0, bl);
+          content: '';
+          display: block;
+          width: 110%;
+          height: 5px;
+          background: $fresh_green;
+          transform: translateX(-4.35%) scaleX(0);
+          transform-origin: center;
+          transition: transform .2s $relaxed;
+        }
+
+        a {
+          transition: $btn_interaction;
+        }
+
+        span {
+          transition: $link_hover;
+          color: $neutral_50;
+        }
+      }
+
+      #auth-btns {
+        display: flex;
+        align-items: center;
+        column-gap: px_to_rem(15);
+
+        button {
+          @include applyFont('Raleway', 500);
+          color: $neutral_50;
+          border: 1px solid $neutral_50;
+          border-radius: px_to_rem(10);
+          padding: px_to_rem(12) px_to_rem(25);
+          transition: $btn_interaction;
+          cursor: pointer;
+
+          &:hover {
+            background: $neutral_50;
+            color: $dynamic_dark;
+          }
+
+          // Interaction
+          &:active {
+            transform: scale(.97);
+          }
+        }
+      }
+    }
   }
 }
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(600px) {
+  @include min-h(940px) {
+    .navbar {
+      height: px_to_rem(100);
+
+      &__content {
+        padding-inline: px_to_rem(35);
+
+        #logo {
+          width: px_to_rem(230);
+        }
+        
+        #mb-menu-btn {
+          padding: px_to_rem(16.8);
+
+          #mb-menu-icon {
+            width: px_to_rem(43.2);
+            height: px_to_rem(43.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include min-w(900px) {
+  @include min-h(1520px) {
+    .navbar {
+      height: px_to_rem(125);
+
+      &__content {
+
+        #logo {
+          width: px_to_rem(260);
+        }
+        
+        #mb-menu-btn {
+          padding: px_to_rem(20.16);
+
+          #mb-menu-icon {
+            width: px_to_rem(51.84);
+            height: px_to_rem(51.84);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1025px) {
+  .navbar {
+    height: px_to_rem(75);
+
+    &__content {
+      padding-inline: px_to_rem(30);
+    }
+  }
+}
+
+@include min-w(1240px) {
+  .navbar {
+    &__content {
+      padding-inline: px_to_rem(50);
+
+      &--desktop {
+        column-gap: px_to_rem(40);
+      }
+    }
+  }
+}
+
+@include min-w(1600px) {
+  .navbar {
+    height: px_to_rem(85);
+    &__content {
+
+      #logo {
+        width: px_to_rem(230);
+      }
+
+      &--desktop {
+        #nav-links {
+          a {
+            font-size: px_to_rem(18);
+          }
+
+          span {
+            font-size: px_to_rem(18);
+          }
+        }
+
+        #auth-btns {
+          button {
+            font-size: px_to_rem(18);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/

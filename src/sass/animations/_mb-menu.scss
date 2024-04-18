@@ -1,0 +1,118 @@
+@use '../abstract/variables' as V;
+
+/*---------------------------------------------------------------------------*/
+
+@mixin applyMenuOpen($duration) {
+  animation: MenuOpen $duration V.$mb_menu forwards;
+}
+
+@keyframes MenuOpen {
+  to {
+    transform: translateY(0) scale(1);
+    border-radius: 0;
+  }
+}
+
+@mixin applyMenuClose {
+  animation: MenuClose .8s V.$mb_menu forwards;
+}
+
+@keyframes MenuClose {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100%) scale(0);
+    opacity: 0;
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@mixin applyLinksSlideIn($duration, $delay) {
+  animation: LinksSlideIn $duration V.$mb_menu $delay backwards;
+}
+
+@keyframes LinksSlideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .1;
+  }
+
+  40% {
+    opacity: .2;
+  }
+
+  60% {
+    opacity: .3;
+  }
+
+  80% {
+    opacity: .4;
+  }
+
+  90% {
+    opacity: .5;
+  }
+}
+
+@mixin applyLinksOut{
+  animation: LinksOut 0s V.$mb_menu forwards;
+}
+
+@keyframes LinksOut {
+  to {
+    visibility: hidden;
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@mixin applyCloseBtnSlideIn($duration) {
+  animation: CloseBtnSlideIn $duration V.$mb_menu .3s backwards;
+}
+
+@keyframes CloseBtnSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .1;
+  }
+
+  40% {
+    opacity: .2;
+  }
+
+  60% {
+    opacity: .3;
+  }
+
+  80% {
+    opacity: .4;
+  }
+
+  90% {
+    opacity: .5;
+  }
+}
+
+@mixin applyCloseBtnOut {
+  animation: CloseBtnOut 0s V.$mb_menu forwards;
+}
+
+@keyframes CloseBtnOut {
+  to {
+    visibility: hidden;
+  }
+}
+
+/*---------------------------------------------------------------------------*/

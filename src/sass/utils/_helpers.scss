@@ -27,8 +27,12 @@
 
 /*---------------------------------------------------------------------------*/
 
-/*
- - Font Styles Oneliner.
+/* 
+  - Font Styles Oneliner.
+  [$typeface] -> font-family e.g. 'Poppins'.
+  [$weight] -> font-weight e.g. 600.
+  [$size] -> font-size e.g. 28.
+  [$style] -> font-style e.g. italic.
 */
 @mixin applyFont($typeface: system-ui, $weight: 400, $size: 16, $style: normal) {
   $valid_weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
@@ -122,8 +126,12 @@
 
 /*---------------------------------------------------------------------------*/
 
-// [ Media Query Shorthands ]
-
+/*
+  - Media Query Shorthands.
+  [$width] -> width value.
+  [$height] -> height value.
+  [$content] -> styles to be applied.
+*/
 @mixin min-w($width) {
   @media screen and (min-width: $width) {
     @content;

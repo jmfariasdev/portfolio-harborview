@@ -2,14 +2,14 @@
 @use '../utils/helpers' as *;
 
 .hero {
-  min-height: 100vh;
+  height: 100vh;
 
   &__background-img {
     height: 83vh;
     background: 
       linear-gradient(to bottom, rgba($black, .9), transparent 75%),
       linear-gradient(to top, rgba($black, .7), transparent 50%),
-      url('/assets/images/opt/hero-sm.jpg') no-repeat 50% 0%/cover;
+      url('/assets/images/opt/hero-sm.jpg') no-repeat center/cover;
   }
 
   &__content {
@@ -26,3 +26,147 @@
     box-shadow: 0 4px 20px rgba($black, .3);
   }
 }
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1025px) {
+  .hero {
+    &__background-img {
+      background: 
+        linear-gradient(to bottom, rgba($black, .9), transparent 75%),
+        linear-gradient(to top, rgba($black, .7), transparent 50%),
+        url('/assets/images/large/hero-lg.jpg') no-repeat 0% 90%/cover;
+    }
+  }
+}
+
+@include min-w(1133px) {
+  .hero {
+    &__background-img {
+      background: 
+        linear-gradient(to bottom, rgba($black, .9), transparent 75%),
+        linear-gradient(to top, rgba($black, .7), transparent 50%),
+        url('/assets/images/large/hero-lg.jpg') no-repeat 0% 83%/cover;
+    }
+  }
+}
+
+@include min-w(1240px) {
+  .hero {
+    &__background-img {
+      background: 
+        linear-gradient(to bottom, rgba($black, .9), transparent 75%),
+        linear-gradient(to top, rgba($black, .7), transparent 50%),
+        url('/assets/images/large/hero-lg.jpg') no-repeat 0% 75%/cover;
+    }
+  }
+}
+
+@include min-w(1360px) {
+  .hero {
+    &__background-img {
+      background: 
+        linear-gradient(to bottom, rgba($black, .9), transparent 75%),
+        linear-gradient(to top, rgba($black, .7), transparent 50%),
+        url('/assets/images/large/hero-lg.jpg') no-repeat 0% 70%/cover;
+    }
+  }
+}
+
+@include min-w(1400px) {
+  .hero {
+    &__background-img {
+      background: 
+        linear-gradient(to bottom, rgba($black, .9), transparent 75%),
+        linear-gradient(to top, rgba($black, .7), transparent 50%),
+        url('/assets/images/large/hero-lg.jpg') no-repeat 0% 77%/cover;
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(478px) {
+  .hero {
+    &__background-img {
+      height: 87vh;
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+// Prevent over-stretching on disproportionate heights to widths.
+
+@include min-w(320px) {
+  @include min-h(940px) {
+    .hero {
+      max-height: 950px;
+
+      &__background-img {
+        max-height: 850px;
+      }
+    }
+  }
+}
+
+@include min-w(600px) {
+  @include min-h(940px) {
+    .hero {
+      max-height: 1150px;
+
+      &__background-img {
+        max-height: 890px;
+      }
+    }
+  }
+}
+
+@include min-w(768px) {
+  @include min-h(1205px) {
+    .hero {
+      max-height: 1280px;
+
+      &__background-img {
+        max-height: 1113px;
+      }
+    }
+  }
+}
+
+@include min-w(900px) {
+  @include min-h(1520px) {
+    .hero {
+      max-height: 1600px;
+
+      &__background-img {
+        max-height: 1392px;
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+// Prevenet too much shrink.
+@include min-w(360px) {
+  @include max-h(650px) {
+    .hero {
+      &__background-img {
+        min-height: 550px;
+      }
+    }
+  }
+}
+
+@include max-w(359px) {
+  @include max-h(560px) {
+    .hero {
+      &__background-img {
+        min-height: 500px;
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/

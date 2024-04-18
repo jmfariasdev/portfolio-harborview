@@ -1,5 +1,6 @@
-@use '../abstract/colors' as *;
 @use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+@use '../abstract/variables' as *;
 
 .u-center {
   max-width: 1600px;
@@ -13,8 +14,25 @@
 
 .u-focusable {
   &:focus-visible {
+    transition: $focus !important;
     outline: 2px solid $fresh_green;
     outline-offset: px_to_rem(8);
     border-radius: px_to_rem(10);
+  }
+}
+
+.u-hideDesktop {
+  @include min-w(1025px) {
+    & {
+      display: none !important;
+    }
+  }
+}
+
+.u-hideMobile {
+  @include max-w(1024px) {
+    & {
+      display: none !important;
+    }
   }
 }

@@ -1,0 +1,47 @@
+@use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+
+#dt-heading {
+  @include applyFont('Kumbh Sans', 600, 52);
+  color: $neutral_50;
+  letter-spacing: -1.5px;
+  text-align: center;
+  text-shadow: 0 4px 20px rgba($black, .6);
+  margin-top: px_to_rem(100);
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1133px) {
+  #dt-heading {
+    font-size: px_to_rem(57.2);
+  }
+}
+
+@include min-w(1240px) {
+  #dt-heading {
+    font-size: px_to_rem(60);
+  }
+}
+
+@include min-w(1400px) {
+  #dt-heading {
+    font-size: px_to_rem(66);
+    margin-top: px_to_rem(120);
+  }
+}
+
+@include min-w(1600px) {
+  #dt-heading {
+    font-size: px_to_rem(78);
+    margin-top: px_to_rem(150);
+  }
+}
+
+@include min-w(1920px) {
+  #dt-heading {
+    font-size: px_to_rem(90);
+  }
+}
+
+/*---------------------------------------------------------------------------*/
