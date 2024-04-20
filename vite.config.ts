@@ -1,6 +1,12 @@
 /// <reference types='vitest' />
 import { defineConfig } from 'vite'
+import { viteSingleFile } from 'vite-plugin-singlefile'
 
 export default defineConfig({
-  test: {}
+  plugins: [
+    viteSingleFile()
+  ],
+  test: {
+    environment: 'happy-dom',
+  }
 })

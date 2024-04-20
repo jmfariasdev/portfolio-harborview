@@ -1,9 +1,9 @@
-enum State {
+export enum State {
   OPEN = 'open',
   CLOSED = 'closed'
 }
 
-const defaultAttrName: string = 'data-state'
+export const defaultAttrName: string = 'data-state'
 
 export abstract class MenuController {
   

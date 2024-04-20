@@ -130,7 +130,7 @@
   - Media Query Shorthands.
   [$width] -> width value.
   [$height] -> height value.
-  [$content] -> styles to be applied.
+  [@content] -> styles to be applied.
 */
 @mixin min-w($width) {
   @media screen and (min-width: $width) {

@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && npm run pre-test",
     "preview": "vite preview",
+    "pre-test": "cp -r ./dist/index.html ./tests/prod && sed -i 's/ type=\"module\"//g' ./tests/prod/index.html",
     "test": "vitest run"
   },
   "devDependencies": {
@@ -14,10 +15,12 @@
     "@testing-library/jest-dom": "^6.4.2",
     "@types/node": "^20.12.7",
     "autoprefixer": "^10.4.19",
+    "happy-dom": "^14.7.1",
     "postcss": "^8.4.38",
     "sass": "^1.75.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.8",
+    "vite-plugin-singlefile": "^2.0.1",
     "vitest": "^1.5.0"
   }
 }
