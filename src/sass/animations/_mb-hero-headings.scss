@@ -1,0 +1,69 @@
+@use '../abstract/variables' as V;
+
+/*---------------------------------------------------------------------------*/
+
+@mixin applyLeftSlideIn($duration) {
+  animation: LeftSlideIn $duration V.$relaxed .35s backwards;
+}
+
+@keyframes LeftSlideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .1;
+  }
+
+  40% {
+    opacity: .2;
+  }
+
+  60% {
+    opacity: .3;
+  }
+
+  80% {
+    opacity: .4;
+  }
+
+  90% {
+    opacity: .5;
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@mixin applyRightSlideIn($duration) {
+  animation: RightSlideIn $duration V.$relaxed .35s backwards;
+}
+
+@keyframes RightSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .1;
+  }
+
+  40% {
+    opacity: .2;
+  }
+
+  60% {
+    opacity: .3;
+  }
+
+  80% {
+    opacity: .4;
+  }
+
+  90% {
+    opacity: .5;
+  }
+}
+
+/*---------------------------------------------------------------------------*/

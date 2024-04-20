@@ -1,0 +1,41 @@
+@use '../abstract/variables' as *;
+
+/*---------------------------------------------------------------------------*/
+
+@mixin applySlideUpwards($duration) {
+  animation: SlideUpwards $duration $relaxed .35s backwards;
+}
+
+@keyframes SlideUpwards {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .3;
+  }
+
+  40% {
+    opacity: .4;
+  }
+
+  60% {
+    opacity: .5;
+  }
+
+  80% {
+    opacity: .6;
+  }
+
+  90% {
+    opacity: .7;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*---------------------------------------------------------------------------*/

@@ -1,0 +1,159 @@
+/*---------------------------------------------------------------------------*/
+
+/*
+  - Converts provided value to rem unit.
+  [$value] -> is assumed to be pixels.
+  [$flag] -> is used to signal that the result must be negative,
+  typically useful when the $value is not a direct value,
+  like a variable, otherwise passing a value like (-20) will
+  also return a negative result.
+*/
+@function px_to_rem($value, $flag: p) {
+  @if not $value {
+    @error('Invalid value. Conversion to rem unit failed.')
+  }
+  @if $flag != n and $flag != p {
+    @error('Conversion to rem failed. Invalid flag, (n) or optionally (p) must be provided.')
+  }
+
+  $result: calc($value / 16)+rem;
+
+  @if $flag == n {
+    @return -$result;
+  }
+
+  @return $result;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/* 
+  - Font Styles Oneliner.
+  [$typeface] -> font-family e.g. 'Poppins'.
+  [$weight] -> font-weight e.g. 600.
+  [$size] -> font-size e.g. 28.
+  [$style] -> font-style e.g. italic.
+*/
+@mixin applyFont($typeface: system-ui, $weight: 400, $size: 16, $style: normal) {
+  $valid_weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+  $valid: false;
+
+  @each $w in $valid_weights {
+    @if $weight == $w {
+      $valid: true;
+    }
+  }
+
+  @if not $valid {
+    @error('Ivalid font weight range.');
+  }
+
+  @if $style != italic and $style != normal {
+    @error('Invalid font style');
+  }
+
+  font-family: $typeface, sans-serif;
+  font-size: px_to_rem($size);
+  font-weight: $weight;
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*
+  - Position Styles Oneliner.
+  [$type] -> positioning type e.g fixed.
+  [$coor1] -> first reference value according to the $reference e.g. 'tl' top: $coord1.
+  [$coor2] -> first reference value according to the $reference e.g. 'tl' left: $coord2.
+  [$reference] -> tl, tr, bl, br = top/left, top/right, bottom/left, bottom/right.
+*/
+@mixin applyPosition($type: absolute, $coord1: 0, $coord2: 0, $reference: tl) {
+  $valid_types: static, relative, absolute, sticky, fixed;
+  $valid: false;
+
+  @each $t in $valid_types {
+    @if $type == $t {
+      $valid: true;
+    }
+  }
+
+  @if not $valid {
+    @error('Invalid position type.');
+  }
+  
+  $valid_references: tl, tr, bl, br, inset;
+  $valid: false;
+
+  @each $r in $valid_references {
+    @if $reference == $r {
+      $valid: true;
+    }
+  }
+
+  @if not $valid {
+    @error('Invalid position reference.');
+  }
+
+  // Returned Styles
+  position: $type;
+
+  @if $reference == inset {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  @if $reference == tl {
+    top: px_to_rem($coord1);
+    left: px_to_rem($coord2);
+  }
+
+  @if $reference == tr {
+    top: px_to_rem($coord1);
+    right: px_to_rem($coord2);
+  }
+
+  @if $reference == bl {
+    bottom: px_to_rem($coord1);
+    left: px_to_rem($coord2);
+  }
+
+  @if $reference == br {
+    bottom: px_to_rem($coord1);
+    right: px_to_rem($coord2);
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+/*
+  - Media Query Shorthands.
+  [$width] -> width value.
+  [$height] -> height value.
+  [@content] -> styles to be applied.
+*/
+@mixin min-w($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-h($height) {
+  @media screen and (min-height: $height) {
+    @content;
+  }
+}
+
+@mixin max-w($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin max-h($height) {
+  @media screen and (max-height: $height) {
+    @content;
+  }
+}
+
+/*---------------------------------------------------------------------------*/

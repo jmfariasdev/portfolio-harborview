@@ -1,1 +1,3 @@
-console.log('Testing!')
+import MobileMenu from './ui/MobileMenu'
+
+MobileMenu.enable()

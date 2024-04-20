@@ -15,10 +15,10 @@
 @use 'utils/utility-classes';
 
 // [ Components ]
-@use 'components/hero-cta';
+@use 'components/navbar';
 @use 'components/mb-menu';
+@use 'components/hero-cta';
 @use 'components/mb-nav-widget';
 
 // [ Typography ]
-@use 'typography/global';
-@use 'typography/mb-hero-headings';
+@use 'typography';
