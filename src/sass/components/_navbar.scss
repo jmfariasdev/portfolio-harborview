@@ -2,7 +2,7 @@
 @use '../abstract/colors' as *;
 @use '../abstract/variables' as *;
 
-.navbar {
+#navbar {
   @include applyPosition;
   width: 100%;
   height: px_to_rem(75);
@@ -10,7 +10,7 @@
   backdrop-filter: blur(3px);
   box-shadow: 0 4px 20px rgba($black, .25);
 
-  &__content {
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,13 +44,13 @@
       }
     }
 
-    &--desktop {
+    #desktop-links {
       display: flex;
       align-items: center;
       column-gap: px_to_rem(30);
       height: 100%;
 
-      #nav-links {
+      ul {
         @include applyFont('Raleway', 600);
         letter-spacing: 1.4px;
         display: flex;
@@ -133,10 +133,10 @@
 
 @include min-w(600px) {
   @include min-h(940px) {
-    .navbar {
+    #navbar {
       height: px_to_rem(100);
 
-      &__content {
+      nav {
         padding-inline: px_to_rem(35);
 
         #logo {
@@ -158,10 +158,10 @@
 
 @include min-w(900px) {
   @include min-h(1520px) {
-    .navbar {
+    #navbar {
       height: px_to_rem(125);
 
-      &__content {
+      nav {
 
         #logo {
           width: px_to_rem(260);
@@ -183,21 +183,22 @@
 /*---------------------------------------------------------------------------*/
 
 @include min-w(1025px) {
-  .navbar {
+  #navbar {
     height: px_to_rem(75);
 
-    &__content {
+    nav {
       padding-inline: px_to_rem(30);
     }
   }
 }
 
 @include min-w(1240px) {
-  .navbar {
-    &__content {
+  #navbar {
+
+    nav {
       padding-inline: px_to_rem(50);
 
-      &--desktop {
+      #desktop-links {
         column-gap: px_to_rem(40);
       }
     }
@@ -205,16 +206,17 @@
 }
 
 @include min-w(1600px) {
-  .navbar {
+  #navbar {
     height: px_to_rem(85);
-    &__content {
+
+    nav {
 
       #logo {
         width: px_to_rem(230);
       }
 
-      &--desktop {
-        #nav-links {
+      #desktop-links {
+        ul {
           a {
             font-size: px_to_rem(18);
           }

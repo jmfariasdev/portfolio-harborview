@@ -2,8 +2,8 @@
 @use '../abstract/colors' as *;
 @use '../animations' as *;
 
-.hero {
-  &__content {
+#hero-section {
+  #content {
     #mb-headings {
       @include applyFont('Kumbh Sans', 600);
       width: px_to_rem(340);
@@ -62,8 +62,8 @@
 
 @include min-w(478px) {
   @include min-h(720px) {
-    .hero {
-      &__content {
+    #hero-section {
+      #content {
         #mb-headings {
           width: px_to_rem(408);
           margin-top: px_to_rem(105);
@@ -95,8 +95,8 @@
 
 @include min-w(600px) {
   @include min-h(940px) {
-    .hero {
-      &__content {
+    #hero-section {
+      #content {
         #mb-headings {
           width: px_to_rem(489.6);
           margin-top: px_to_rem(125);
@@ -128,8 +128,8 @@
 
 @include min-w(768px) {
   @include min-h(940px) {
-    .hero {
-      &__content {
+    #hero-section {
+      #content {
         #mb-headings {
           width: px_to_rem(538.56);
           margin-top: px_to_rem(126.5);
@@ -159,8 +159,8 @@
   }
 
   @include min-h(1200px) {
-    .hero {
-      &__content {
+    #hero-section {
+      #content {
         #mb-headings {
           width: px_to_rem(646.27);
           margin-top: px_to_rem(151.8);
@@ -192,8 +192,8 @@
 
 @include min-w(900px) {
   @include min-h(1520px) {
-    .hero {
-      &__content {
+    #hero-section {
+      #content {
         #mb-headings {
           width: px_to_rem(710.9);
           margin-top: px_to_rem(167);
@@ -226,86 +226,62 @@
 /*---------------------------------------------------------------------------*/
 
 @include max-w(375px) {
-  .hero {
-    #mb-headings {
-      width: px_to_rem(306);
+  #hero-section {
+    #content {
+      #mb-headings {
+        width: px_to_rem(306);
+        margin-top: px_to_rem(90);
 
-      #h-1,
-      #h-4 {
-        font-size: px_to_rem(46.8);
-      }
+        #h-1,
+        #h-4 {
+          font-size: px_to_rem(46.8);
+        }
 
-      #h-1 {
-        margin-bottom: px_to_rem(5.4);
-      }
+        #h-1 {
+          margin-bottom: px_to_rem(5.4);
+        }
 
-      #h-2 {
-        font-size: px_to_rem(32.4);
-        margin-bottom: px_to_rem(48.6);
-      }
+        #h-2 {
+          font-size: px_to_rem(32.4);
+          margin-bottom: px_to_rem(48.6);
+        }
 
-      #h-3 {
-        font-size: px_to_rem(25.2);
-        margin-left: px_to_rem(36);
-        margin-bottom: px_to_rem(4.5);
+        #h-3 {
+          font-size: px_to_rem(25.2);
+          margin-left: px_to_rem(36);
+          margin-bottom: px_to_rem(4.5);
+        }
       }
     }
   }
 }
 
 @include max-w(320px) {
-  .hero {
-    #mb-headings {
-      width: px_to_rem(275.4);
-      margin-top: px_to_rem(70);
+  #hero-section {
+    #content {
+      #mb-headings {
+        width: px_to_rem(275.4);
+        margin-top: px_to_rem(70);
 
-      #h-1,
-      #h-4 {
-        font-size: px_to_rem(42.1);
-      }
+        #h-1,
+        #h-4 {
+          font-size: px_to_rem(42.1);
+        }
 
-      #h-1 {
-        margin-bottom: px_to_rem(4.86);
-      }
+        #h-1 {
+          margin-bottom: px_to_rem(4.86);
+        }
 
-      #h-2 {
-        font-size: px_to_rem(29.16);
-        margin-bottom: px_to_rem(43.74);
-      }
+        #h-2 {
+          font-size: px_to_rem(29.16);
+          margin-bottom: px_to_rem(43.74);
+        }
 
-      #h-3 {
-        font-size: px_to_rem(22.68);
-        margin-left: px_to_rem(32.4);
-        margin-bottom: px_to_rem(4.05);
-      }
-    }
-  }
-}
-
-@include max-w(280px) {
-  .hero {
-    #mb-headings {
-      width: px_to_rem(247.86);
-      margin-top: px_to_rem(75) !important;
-
-      #h-1,
-      #h-4 {
-        font-size: px_to_rem(37.89);
-      }
-
-      #h-1 {
-        margin-bottom: px_to_rem(4.37);
-      }
-
-      #h-2 {
-        font-size: px_to_rem(26.24);
-        margin-bottom: px_to_rem(39.36);
-      }
-
-      #h-3 {
-        font-size: px_to_rem(20.41);
-        margin-left: px_to_rem(29.16);
-        margin-bottom: px_to_rem(3.64);
+        #h-3 {
+          font-size: px_to_rem(22.68);
+          margin-left: px_to_rem(32.4);
+          margin-bottom: px_to_rem(4.05);
+        }
       }
     }
   }

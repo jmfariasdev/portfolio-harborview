@@ -12,7 +12,7 @@ describe('MobileMenu', () => {
     const page = browser.newPage()
     page.content = html
 
-    const menu = page.mainFrame.document.querySelector('.mb-menu')
+    const menu = page.mainFrame.document.querySelector('#mb-menu')
     expect(menu).not.toBeNull()
     expect(menu).not.toHaveAttribute('data-state')
 
@@ -24,9 +24,9 @@ describe('MobileMenu', () => {
     const page = browser.newPage()
     page.content = html
     
-    const menu = page.mainFrame.document.querySelector('.mb-menu')
+    const menu = page.mainFrame.document.querySelector('#mb-menu')
     const openBtn = page.mainFrame.document.querySelector('#mb-menu-btn')
-    const closeBtn = page.mainFrame.document.querySelector('.mb-menu__close-btn')
+    const closeBtn = page.mainFrame.document.querySelector('#close-btn')
     
     /* @ts-ignore */
     fireEvent.click(openBtn)
@@ -41,4 +41,3 @@ describe('MobileMenu', () => {
     await browser.close()
   })
 })
-

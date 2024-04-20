@@ -1,10 +1,10 @@
 @use '../abstract/colors' as *;
 @use '../utils/helpers' as *;
 
-.hero {
+#hero-section {
   height: 100vh;
 
-  &__background-img {
+  #background-img {
     height: 83vh;
     background: 
       linear-gradient(to bottom, rgba($black, .9), transparent 75%),
@@ -12,7 +12,7 @@
       url('/assets/images/opt/hero-sm.jpg') no-repeat center/cover;
   }
 
-  &__content {
+  #content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,8 +30,8 @@
 /*---------------------------------------------------------------------------*/
 
 @include min-w(1025px) {
-  .hero {
-    &__background-img {
+  #hero-section {
+    #background-img {
       background: 
         linear-gradient(to bottom, rgba($black, .9), transparent 75%),
         linear-gradient(to top, rgba($black, .7), transparent 50%),
@@ -41,8 +41,8 @@
 }
 
 @include min-w(1133px) {
-  .hero {
-    &__background-img {
+  #hero-section {
+    #background-img {
       background: 
         linear-gradient(to bottom, rgba($black, .9), transparent 75%),
         linear-gradient(to top, rgba($black, .7), transparent 50%),
@@ -52,8 +52,8 @@
 }
 
 @include min-w(1240px) {
-  .hero {
-    &__background-img {
+  #hero-section {
+    #background-img {
       background: 
         linear-gradient(to bottom, rgba($black, .9), transparent 75%),
         linear-gradient(to top, rgba($black, .7), transparent 50%),
@@ -63,8 +63,8 @@
 }
 
 @include min-w(1360px) {
-  .hero {
-    &__background-img {
+  #hero-section {
+    #background-img {
       background: 
         linear-gradient(to bottom, rgba($black, .9), transparent 75%),
         linear-gradient(to top, rgba($black, .7), transparent 50%),
@@ -74,8 +74,8 @@
 }
 
 @include min-w(1400px) {
-  .hero {
-    &__background-img {
+  #hero-section {
+    #background-img {
       background: 
         linear-gradient(to bottom, rgba($black, .9), transparent 75%),
         linear-gradient(to top, rgba($black, .7), transparent 50%),
@@ -87,8 +87,8 @@
 /*---------------------------------------------------------------------------*/
 
 @include min-w(478px) {
-  .hero {
-    &__background-img {
+  #hero-section {
+    #background-img {
       height: 87vh;
     }
   }
@@ -100,10 +100,10 @@
 
 @include min-w(320px) {
   @include min-h(940px) {
-    .hero {
+    #hero-section {
       max-height: 950px;
 
-      &__background-img {
+      #background-img {
         max-height: 850px;
       }
     }
@@ -112,11 +112,11 @@
 
 @include min-w(600px) {
   @include min-h(940px) {
-    .hero {
-      max-height: 1150px;
+    #hero-section {
+      max-height: 1180px;
 
-      &__background-img {
-        max-height: 890px;
+      #background-img {
+        max-height: 1100px;
       }
     }
   }
@@ -124,10 +124,10 @@
 
 @include min-w(768px) {
   @include min-h(1205px) {
-    .hero {
+    #hero-section {
       max-height: 1280px;
 
-      &__background-img {
+      #background-img {
         max-height: 1113px;
       }
     }
@@ -136,10 +136,10 @@
 
 @include min-w(900px) {
   @include min-h(1520px) {
-    .hero {
+    #hero-section {
       max-height: 1600px;
 
-      &__background-img {
+      #background-img {
         max-height: 1392px;
       }
     }
@@ -151,8 +151,8 @@
 // Prevenet too much shrink.
 @include min-w(360px) {
   @include max-h(650px) {
-    .hero {
-      &__background-img {
+    #hero-section {
+      #background-img {
         min-height: 550px;
       }
     }
@@ -161,8 +161,8 @@
 
 @include max-w(359px) {
   @include max-h(560px) {
-    .hero {
-      &__background-img {
+    #hero-section {
+      #background-img {
         min-height: 500px;
       }
     }

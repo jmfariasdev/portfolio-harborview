@@ -3,12 +3,13 @@
 @use '../abstract/variables' as V;
 @use '../animations' as *;
 
-.mb-menu {
+#mb-menu {
   @include applyPosition(fixed, _, _, inset);
   background: linear-gradient(to bottom, $black, hsl(0, 0%, 8%));
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 480px;
   // Animation related
   transform: translateY(10%) scale(0);
   border-radius: 50%;
@@ -16,14 +17,14 @@
   &[data-state='open'] {
     @include applyMenuOpen(.3s);
 
-    .mb-menu__close-btn {
+    #close-btn {
       @include applyCloseBtnSlideIn(.4s)
     }
 
     // Links Animation
     @for $i from 0 through 5 {
       $delay: .3s + (.08 * $i); /* initial delay + (interval between each link * $i) */
-      .mb-menu__links {
+      #nav-links {
         li[id='l-#{$i + 1}'] {
           @include applyLinksSlideIn(.4s, $delay);
         }
@@ -34,18 +35,18 @@
   &[data-state='closed'] {
     @include applyMenuClose;
 
-    .mb-menu__links {
+    #nav-links {
       li {
         @include applyLinksOut;
       }
     }
 
-    .mb-menu__close-btn {
+    #close-btn {
       @include applyCloseBtnOut;
     }
   }
 
-  &__close-btn {
+  #close-btn {
     @include applyPosition(fixed, 10, 10, tr);
     padding: px_to_rem(15);
     border-radius: 50%;
@@ -67,7 +68,7 @@
     }
   }
 
-  &__links {
+  #nav-links {
     @include applyFont('Raleway', 400, 36);
     letter-spacing: 1.6px;
     display: flex;
@@ -100,8 +101,8 @@
 /*---------------------------------------------------------------------------*/
 
 @include max-h(680px) {
-  .mb-menu {
-    &__close-btn {
+  #mb-menu {
+    #close-btn {
       @include applyPosition(fixed, 12, 12, tr);
       padding: px_to_rem(13.5);
 
@@ -111,7 +112,7 @@
       }
     }
     
-    &__links {
+    #nav-links {
       font-size: px_to_rem(32.4);
       row-gap: px_to_rem(27);
     }
@@ -119,8 +120,8 @@
 }
 
 @include max-h(590px) {
-  .mb-menu {
-    &__close-btn {
+  #mb-menu {
+    #close-btn {
       padding: px_to_rem(12.15);
 
       #close-btn-icon {
@@ -129,7 +130,7 @@
       }
     }
     
-    &__links {
+    #nav-links {
       font-size: px_to_rem(29.16);
       row-gap: px_to_rem(24.3);
     }
@@ -137,8 +138,8 @@
 }
 
 @include max-w(280px) {
-  .mb-menu {
-    &__close-btn {
+  #mb-menu {
+    #close-btn {
       padding: px_to_rem(11.87);
 
       #close-btn-icon {
@@ -147,7 +148,7 @@
       }
     }
     
-    &__links {
+    #nav-links {
       font-size: px_to_rem(27.7);
       row-gap: px_to_rem(23);
     }
@@ -158,12 +159,12 @@
 
 @include min-w(600px) {
   @include min-h(720px) {
-    .mb-menu {
-      &__close-btn {
+    #mb-menu {
+      #close-btn {
         @include applyPosition(fixed, 15, 15, tr);
       }
       
-      &__links {
+      #nav-links {
         font-size: px_to_rem(39.6);
         row-gap: px_to_rem(33);
       }
@@ -171,8 +172,8 @@
   }
 
   @include min-h(940px) {
-    .mb-menu {
-      &__close-btn {
+    #mb-menu {
+      #close-btn {
         @include applyPosition(fixed, 20, 20, tr);
         padding: px_to_rem(18);
 
@@ -182,7 +183,7 @@
         }
       }
       
-      &__links {
+      #nav-links {
         font-size: px_to_rem(47.52);
         row-gap: px_to_rem(39.6);
       }
@@ -192,8 +193,8 @@
 
 @include min-w(768px) {
   @include min-h(1200px) {
-    .mb-menu {
-      &__close-btn {
+    #mb-menu {
+      #close-btn {
         @include applyPosition(fixed, 25, 25, tr);
         padding: px_to_rem(21.6);
 
@@ -203,12 +204,34 @@
         }
       }
       
-      &__links {
+      #nav-links {
         font-size: px_to_rem(57);
         row-gap: px_to_rem(47.52);
       }
     }
   }
 }
+
+@include min-w(900px) {
+  @include min-h(1520px) {
+    #mb-menu {
+      #close-btn {
+        @include applyPosition(fixed, 30, 30, tr);
+        padding: px_to_rem(23.4);
+
+        #close-btn-icon {
+          width: px_to_rem(75.48);
+          height: px_to_rem(75.48);
+        }
+      }
+      
+      #nav-links {
+        font-size: px_to_rem(74.1);
+        row-gap: px_to_rem(61.8);
+      }
+    }
+  }
+}
+
 
 /*---------------------------------------------------------------------------*/

@@ -14,9 +14,9 @@ class MobileMenu extends MenuController {
   }
 
   // DOM
-  protected MenuElement = UISelector.select<HTMLDivElement>('.mb-menu')
+  protected MenuElement = UISelector.select<HTMLDivElement>('#mb-menu')
   protected ToggleElement = UISelector.select<HTMLButtonElement>('#mb-menu-btn')
-  protected CloseElement = UISelector.select<HTMLButtonElement>('.mb-menu__close-btn')
+  protected CloseElement = UISelector.select<HTMLButtonElement>('#close-btn')
 
   private constructor() {
     // Other event type can be specified as an

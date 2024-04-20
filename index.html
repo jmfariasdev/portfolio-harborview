@@ -18,8 +18,8 @@
   <body>
     
     <!-- [ Navbar ] -->
-    <header class='navbar'>
-      <nav class='navbar__content u-center'>
+    <header id='navbar'>
+      <nav class='u-center'>
         <!-- logo -->
         <a href='#' id='logo' class='u-focusable'>
           <img src='/assets/logo/expanded.svg' class='u-unselectable' alt='Harborview Logo' />
@@ -36,8 +36,8 @@
         </button>
 
         <!-- desktop nav links & buttons -->
-        <div class='navbar__content--desktop u-hideMobile'>
-          <ul id='nav-links' role='navigation'>
+        <div id='desktop-links' class='u-hideMobile'>
+          <ul role='navigation'>
             <li>
               <a href='#' class='u-focusable'><span class='u-unselectable'>Services</span></a>
             </li>
@@ -60,9 +60,9 @@
     </header>
 
     <!-- [ Hero Section ] -->
-    <section class='hero'>
-      <div class='hero__background-img'>
-        <div class='hero__content u-center'>
+    <section id='hero-section'>
+      <div id='background-img'>
+        <div id='content' class='u-center'>
           <!-- mobile headings -->
           <div id='mb-headings' class='u-hideDesktop'>
             <h1 id='h-1'>The Bridge</h1>
@@ -84,9 +84,9 @@
       </div>
 
       <!-- [ Mobile Menu ] -->
-      <div class='mb-menu' role='menu'>
+      <div id='mb-menu' role='menu'>
         <!-- close button -->
-        <button class='mb-menu__close-btn'>
+        <button id='close-btn'>
           <img 
             src='/assets/icons/close-white.svg'
             class='u-unselectable'
@@ -94,8 +94,9 @@
             alt='Close Button Icon'
           />
         </button>
+
         <!-- nav links -->
-        <ul class='mb-menu__links' role='navigation'>
+        <ul id='nav-links' role='navigation'>
           <li id='l-1'>
             <a href='#' class='u-focusable'><span class='u-unselectable'>Services</span></a>
           </li>
@@ -120,7 +121,6 @@
       <div id='divider'></div>
     </section>
     
-    <!-- Typescript -->
     <script type='module' src='/src/main.ts'></script>
   </body>
 </html>
