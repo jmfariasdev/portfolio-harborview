@@ -1,0 +1,70 @@
+@use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+
+#camping-card,
+#hiking-card,
+#waterfall-card,
+#mountainclimbing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: px_to_rem(315);
+  height: px_to_rem(445);
+  background: $white;
+  border-radius: px_to_rem(25);
+  box-shadow: 0 2px 30px rgba($black, .05);
+
+  img {
+    width: px_to_rem(285);
+    height: px_to_rem(228);
+    object-fit: cover;
+    margin-top: px_to_rem(14);
+    border-radius: px_to_rem(20);
+  }
+
+  h3 {
+    @include applyFont('Raleway', 700, 24);
+    letter-spacing: 1.4px;
+    margin-top: px_to_rem(17);
+  }
+
+  p {
+    margin-top: px_to_rem(8);
+  }
+}
+
+#camping-card {
+  img {
+    object-position: 0 64%;
+  }
+
+  p {
+    width: px_to_rem(239);
+  }
+}
+
+#hiking-card {
+  p {
+    width: px_to_rem(225);
+  }
+}
+
+#waterfall-card {
+  img {
+    object-position: 0 90%;
+  }
+
+  p {
+    width: px_to_rem(234);
+  }
+}
+
+#mountainclimbing-card {
+  img {
+    object-position: 0 70%;
+  }
+
+  p {
+    width: px_to_rem(251);
+  }
+}

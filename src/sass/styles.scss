@@ -10,6 +10,7 @@
 
 // [ Layout ]
 @use 'layout/hero-section';
+@use 'layout/services-section';
 
 // [ Utils ]
 @use 'utils/utility-classes';
@@ -19,6 +20,7 @@
 @use 'components/mb-menu';
 @use 'components/hero-cta';
 @use 'components/mb-nav-widget';
+@use 'components/services-cards';
 
 // [ Typography ]
 @use 'typography';

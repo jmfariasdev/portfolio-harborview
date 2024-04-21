@@ -1,3 +1,5 @@
+@use '../abstract/colors' as *;
+
 html {
   font-size: 100%;
   box-sizing: border-box;
@@ -19,7 +21,7 @@ html:has(.mb-menu[data-state='open']) {
 }
 
 body {
-  min-height: 2000px; // TODO: Remove this later.
+  background: $neutral_50;
 }
 
 // Handle accessibility styles myself.

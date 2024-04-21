@@ -1,0 +1,36 @@
+@use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
+@use '../abstract/variables' as V;
+
+#services-section {
+  #content {
+    padding-bottom: px_to_rem(80);
+
+    #services-cards {
+      display: grid;
+      justify-content: center;
+      row-gap: px_to_rem(40);
+      margin-top: px_to_rem(33);
+    }
+
+    #more-info {
+      font-size: px_to_rem(21);
+      letter-spacing: 1.4px;
+      color: $fresh_green;
+      display: block;
+      margin-inline: auto;
+      margin-top: px_to_rem(54);
+      padding: px_to_rem(3) px_to_rem(13);
+      border-bottom: 3px solid $fresh_green;
+
+      span {
+        display: inline-block;
+        transition: V.$btn_interaction;
+      }
+
+      &:active span {
+        transform: scale(.97);
+      }
+    }
+  }
+}

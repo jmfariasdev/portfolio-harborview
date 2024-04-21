@@ -1,5 +1,13 @@
 @use '../utils/helpers' as *;
+@use '../abstract/colors' as *;
 
 body {
   @include applyFont('Poppins')
+}
+
+.section-title {
+  @include applyFont('Raleway', 700, 28);
+  color: $black;
+  letter-spacing: 1.4px;
+  text-align: center;
 }
