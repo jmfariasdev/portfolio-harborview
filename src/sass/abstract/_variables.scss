@@ -10,7 +10,8 @@ $mb_menu: cubic-bezier(.14,.82,.62,.95);
 // [ Trasitions ]
 
 $focus: outline-offset .2s cubic-bezier(.43,.88,.68,1.01);
-$btn_interaction: transform .3s, background .3s, color .3s ease;
+$btn_interaction: transform .3s, background .3s, color .2s ease;
 $link_hover: color .3s $relaxed;
+$fade_in: opacity .3s, background .3s $relaxed;
 
 /*---------------------------------------------------------------------------*/

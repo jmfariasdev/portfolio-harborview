@@ -22,6 +22,7 @@
       margin-top: px_to_rem(54);
       padding: px_to_rem(3) px_to_rem(13);
       border-bottom: 3px solid $fresh_green;
+      cursor: pointer;
 
       span {
         display: inline-block;
@@ -34,3 +35,139 @@
     }
   }
 }
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(400px) {
+  #services-section {
+    #content {
+      #more-info {
+        font-size: px_to_rem(25.2);
+        padding: px_to_rem(3.6) px_to_rem(15.6);
+      }
+    }
+  }
+}
+
+@include min-w(600px) {
+  @include min-h(720px) {
+    #services-section {
+      #content {
+        h2 {
+          font-size: px_to_rem(42);
+        }
+
+        #more-info {
+          font-size: px_to_rem(30.2);
+          padding: px_to_rem(4.32) px_to_rem(18.72);
+        }
+      }
+    }
+  }
+}
+
+@include min-w(768px) {
+  @include min-h(720px) {
+    #services-section {
+      #content {
+        h2 {
+          font-size: px_to_rem(48);
+        }
+
+        #services-cards {
+          margin-top: px_to_rem(50);
+          row-gap: px_to_rem(70);
+        }
+
+        #more-info {
+          font-size: px_to_rem(40.32);
+          padding: px_to_rem(5.76) px_to_rem(24.96);
+        }
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1025px) {
+  #services-section {
+    #content {
+      #content-group {
+        width: fit-content;
+        margin-inline: auto;
+      }
+
+      #services-cards {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        width: fit-content;
+        margin-inline: auto;
+        gap: px_to_rem(40);
+        margin-top: px_to_rem(30);
+      }
+
+      #more-info {
+        font-size: px_to_rem(16.8);
+        margin-top: px_to_rem(43.2);
+        padding: px_to_rem(2.4) px_to_rem(10.4);
+        margin: px_to_rem(23.2) 0 0 auto;
+        transition: background .35s, color .35s, ease;
+
+        &:hover {
+          background: $fresh_green;
+          color: $white;
+          border-radius: px_to_rem(5);
+          box-shadow: 0 2px 20px rgba($black, .15);
+        }
+      }
+    }
+  }
+}
+
+@include min-w(1200px) {
+  #services-section {
+    #content {
+      #services-cards {
+        margin-top: px_to_rem(40);
+      }
+
+      #more-info {
+        font-size: px_to_rem(21);
+        margin-top: px_to_rem(54);
+        padding: px_to_rem(3) px_to_rem(13);
+        margin: px_to_rem(29) 0 0 auto;
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include max-w(1024px) {
+  #services-section {
+    #content {
+      #more-info {
+        background: $fresh_green;
+        color: $white;
+        border-radius: px_to_rem(5);
+        box-shadow: 0 2px 20px rgba($black, .15);
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1440px) {
+  #services-section {
+    #content {
+      #more-info {
+        font-size: px_to_rem(23.1);
+        padding: px_to_rem(3.3) px_to_rem(14.3);
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/

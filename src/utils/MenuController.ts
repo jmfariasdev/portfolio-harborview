@@ -3,6 +3,7 @@ export enum State {
   CLOSED = 'closed'
 }
 
+// Css styles depends on this attribute.
 export const defaultAttrName: string = 'data-state'
 
 export abstract class MenuController {

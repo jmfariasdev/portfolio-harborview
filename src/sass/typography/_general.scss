@@ -11,3 +11,21 @@ body {
   letter-spacing: 1.4px;
   text-align: center;
 }
+
+/*---------------------------------------------------------------*/
+
+@include min-w(1025px) {
+  .section-title {
+    @include applyFont('Raleway', 600, 30);
+    text-align: left;
+    margin-left: px_to_rem(35);
+  }
+}
+
+@include min-w(1200px) {
+  .section-title {
+    font-size: px_to_rem(36);
+  }
+}
+
+/*---------------------------------------------------------------*/

@@ -1,5 +1,6 @@
 @use '../utils/helpers' as *;
 @use '../abstract/colors' as *;
+@use '../abstract/variables' as V;
 
 #camping-card,
 #hiking-card,
@@ -14,7 +15,7 @@
   border-radius: px_to_rem(25);
   box-shadow: 0 2px 30px rgba($black, .05);
 
-  img {
+  .card-img {
     width: px_to_rem(285);
     height: px_to_rem(228);
     object-fit: cover;
@@ -26,6 +27,7 @@
     @include applyFont('Raleway', 700, 24);
     letter-spacing: 1.4px;
     margin-top: px_to_rem(17);
+    text-align: center;
   }
 
   p {
@@ -34,7 +36,7 @@
 }
 
 #camping-card {
-  img {
+  .card-img {
     object-position: 0 64%;
   }
 
@@ -50,7 +52,7 @@
 }
 
 #waterfall-card {
-  img {
+  .card-img {
     object-position: 0 90%;
   }
 
@@ -60,7 +62,7 @@
 }
 
 #mountainclimbing-card {
-  img {
+  .card-img {
     object-position: 0 70%;
   }
 
@@ -68,3 +70,458 @@
     width: px_to_rem(251);
   }
 }
+
+/*---------------------------------------------------------------------------*/
+
+@include max-w(320px) {
+  #camping-card,
+  #hiking-card,
+  #waterfall-card,
+  #mountainclimbing-card {
+    width: px_to_rem(283.5);
+    height: px_to_rem(400.5);
+    border-radius: px_to_rem(22.5);
+
+    .card-img {
+      width: px_to_rem(256.5);
+      height: px_to_rem(205.2);
+      margin-top: px_to_rem(12.6);
+      border-radius: px_to_rem(18);
+    }
+
+    h3 {
+      font-size: px_to_rem(21);
+      margin-top: px_to_rem(18);
+    }
+
+    p {
+      font-size: px_to_rem(14);
+      margin-top: px_to_rem(7.2);
+    }
+  }
+
+  #camping-card {
+    p {
+      width: px_to_rem(215.1);
+    }
+  }
+
+  #hiking-card {
+    p {
+      width: px_to_rem(202.5);
+    }
+  }
+
+  #waterfall-card {
+    p {
+      width: px_to_rem(210.6);
+    }
+  }
+
+  #mountainclimbing-card {
+    p {
+      width: px_to_rem(225);
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(400px) {
+  #camping-card,
+  #hiking-card,
+  #waterfall-card,
+  #mountainclimbing-card {
+    width: px_to_rem(378);
+    height: px_to_rem(534);
+    border-radius: px_to_rem(30);
+
+    .card-img {
+      width: px_to_rem(342);
+      height: px_to_rem(273.6);
+      margin-top: px_to_rem(16.8);
+      border-radius: px_to_rem(24);
+    }
+
+    h3 {
+      font-size: px_to_rem(30);
+      margin-top: px_to_rem(19);
+    }
+
+    p {
+      font-size: px_to_rem(19);
+      margin-top: px_to_rem(9);
+    }
+  }
+
+  #camping-card {
+    p {
+      width: px_to_rem(286.8);
+    }
+  }
+
+  #hiking-card {
+    p {
+      width: px_to_rem(270);
+    }
+  }
+
+  #waterfall-card {
+    p {
+      width: px_to_rem(280.8);
+    }
+  }
+
+  #mountainclimbing-card {
+    p {
+      width: px_to_rem(301.2);
+    }
+  }
+}
+
+// copy the above block but scale up multiplying properties values by 1.2 and change the value to min-w(600px).
+
+@include min-w(600px) {
+  @include min-h(720px) {
+    #camping-card,
+    #hiking-card,
+    #waterfall-card,
+    #mountainclimbing-card {
+      width: px_to_rem(453.6);
+      height: px_to_rem(640.8);
+      border-radius: px_to_rem(36);
+
+      .card-img {
+        width: px_to_rem(410.4);
+        height: px_to_rem(328.32);
+        margin-top: px_to_rem(20.16);
+        border-radius: px_to_rem(28.8);
+      }
+
+      h3 {
+        font-size: px_to_rem(36);
+        margin-top: px_to_rem(22.8);
+      }
+
+      p {
+        font-size: px_to_rem(22.8);
+        margin-top: px_to_rem(10.8);
+      }
+    }
+
+    #camping-card {
+      p {
+        width: px_to_rem(344.16);
+      }
+    }
+
+    #hiking-card {
+      p {
+        width: px_to_rem(324);
+      }
+    }
+
+    #waterfall-card {
+      p {
+        width: px_to_rem(336.96);
+      }
+    }
+
+    #mountainclimbing-card {
+      p {
+        width: px_to_rem(361.44);
+      }
+    }
+  }
+}
+
+@include min-w(768px) {
+  @include min-h(940px) {
+    #camping-card,
+    #hiking-card,
+    #waterfall-card,
+    #mountainclimbing-card {
+      width: px_to_rem(567);
+      height: px_to_rem(800.1);
+      border-radius: px_to_rem(40.5);
+
+      .card-img {
+        width: px_to_rem(513.3);
+        height: px_to_rem(410.64);
+        margin-top: px_to_rem(25.2);
+        border-radius: px_to_rem(30.6);
+      }
+
+      h3 {
+        font-size: px_to_rem(42);
+        margin-top: px_to_rem(35);
+      }
+
+      p {
+        font-size: px_to_rem(27);
+        margin-top: px_to_rem(20);
+      }
+    }
+
+    #camping-card {
+      p {
+        width: px_to_rem(409.5);
+      }
+    }
+
+    #hiking-card {
+      p {
+        width: px_to_rem(385.5);
+      }
+    }
+
+    #waterfall-card {
+      p {
+        width: px_to_rem(401.4);
+      }
+    }
+
+    #mountainclimbing-card {
+      p {
+        width: px_to_rem(430.2);
+      }
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
+
+@include min-w(1025px) {
+  #camping-card,
+  #hiking-card,
+  #waterfall-card,
+  #mountainclimbing-card {
+    flex-direction: row;
+    width: px_to_rem(429.6);
+    height: px_to_rem(172);
+
+    .hover-overlay {
+      height: 100%;
+      position: relative;
+      background: $black;
+      border-top-left-radius: px_to_rem(26);
+      border-bottom-left-radius: px_to_rem(26);
+
+      &:has(.card-img:hover, .expand-btn:hover, .expand-btn:focus-visible) {
+        .card-img {
+          opacity: .4;
+        }
+
+        .expand-btn {
+          opacity: 1;
+        }
+      }
+
+      .card-img {
+        overflow: hidden;
+        transition: V.$fade_in;
+      }
+
+      // images hover styles
+      .expand-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: px_to_rem(90);
+        height: px_to_rem(90);
+        background: rgba($black, .6);
+        border-radius: 50%;
+        box-shadow: 0 2px 20px 2px rgba($black, .6);
+        cursor: pointer;
+        opacity: 0;
+        transition: V.$fade_in;
+
+        &:hover {
+          background: rgba($black, .8);
+        }
+
+        &:active {
+          transition: V.$btn_interaction;
+          transform: translate(-50%, -50%) scale(.95);
+        }
+
+        #hover-icon {
+          width: px_to_rem(60);
+          height: px_to_rem(60);
+          overflow: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    .card-img {
+      width: px_to_rem(180);
+      height: 100%;
+      margin-top: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .info {
+      height: px_to_rem(128);
+      margin-left: px_to_rem(30.4);
+    }
+
+    h3 {
+      font-size: px_to_rem(19.2);
+      margin-top: 0;
+      text-align: left;
+    }
+
+    p {
+      font-size: px_to_rem(12.8);
+      margin-top: px_to_rem(6.4);
+    }
+  }
+
+  #camping-card {
+    .card-img {
+      object-position: 0 55%;
+    }
+
+    p {
+      width: px_to_rem(191.2);
+    }
+  }
+
+  #hiking-card {
+    p {
+      width: px_to_rem(180);
+    }
+  }
+
+  #waterfall-card {
+    .card-img {
+      object-position: 0 84%;
+    }
+
+    p {
+      width: px_to_rem(187.2);
+    }
+  }
+
+  #mountainclimbing-card {
+    .card-img {
+      object-position: 0 55%;
+    }
+
+    p {
+      width: px_to_rem(200.8);
+    }
+  }
+}
+
+@include min-w(1200px) {
+  #camping-card,
+  #hiking-card,
+  #waterfall-card,
+  #mountainclimbing-card {
+    width: px_to_rem(537);
+    height: px_to_rem(215);
+
+    .info {
+      height: px_to_rem(160);
+      margin-left: px_to_rem(38);
+    }
+
+    .card-img {
+      width: px_to_rem(225);
+    }
+
+    h3 {
+      font-size: px_to_rem(24);
+    }
+
+    p {
+      font-size: px_to_rem(16);
+      margin-top: px_to_rem(8);
+    }
+  }
+
+  #camping-card {
+    p {
+      width: px_to_rem(239);
+    }
+  }
+
+  #hiking-card {
+    p {
+      width: px_to_rem(225);
+    }
+  }
+
+  #waterfall-card {
+    p {
+      width: px_to_rem(234);
+    }
+  }
+
+  #mountainclimbing-card {
+    p {
+      width: px_to_rem(251);
+    }
+  }
+}
+
+@include min-w(1440px) {
+  #camping-card,
+  #hiking-card,
+  #waterfall-card,
+  #mountainclimbing-card {
+    width: px_to_rem(590.7);
+    height: px_to_rem(236.5);
+
+    .info {
+      height: px_to_rem(176);
+      margin-left: px_to_rem(41.8);
+    }
+
+    .card-img {
+      width: px_to_rem(247.5);
+    }
+
+    h3 {
+      font-size: px_to_rem(26.4);
+    }
+
+    p {
+      font-size: px_to_rem(17.6);
+      margin-top: px_to_rem(8.8);
+    }
+  }
+
+  #camping-card {
+    p {
+      width: px_to_rem(262.9);
+    }
+  }
+
+  #hiking-card {
+    p {
+      width: px_to_rem(247.5);
+    }
+  }
+
+  #waterfall-card {
+    p {
+      width: px_to_rem(257.4);
+    }
+  }
+
+  #mountainclimbing-card {
+    p {
+      width: px_to_rem(276.1);
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*/
